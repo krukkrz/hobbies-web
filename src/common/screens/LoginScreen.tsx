@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { Button as GeneralButton } from "../components/buttons";
 import {Input} from "../components/inputs";
+import {login} from "../services/authService";
+import {useNavigate} from "react-router-dom";
+
 
 const LoginWrapper = styled.div`
   display: flex;
@@ -25,13 +28,25 @@ const Page = styled.div`
 `
 
 const LoginScreen = () => {
+
+    const navigate = useNavigate()
+
+    const handleSubmit = (event: any) => {
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        login(email, password)
+        navigate('/')
+    }
+
     return (
         <Page>
             <LoginWrapper>
-                <Title>Hobbies</Title>
-                <Input placeholder='Email'/>
-                <Input placeholder='Password'/>
-                <Button>Login</Button>
+                <form onSubmit={handleSubmit}>
+                    <Title>Hobbies</Title>
+                    <Input type='email' name='email' placeholder='Email' required/>
+                    <Input type='password' name='password' placeholder='Password' required/>
+                    <Button type='submit'>Login</Button>
+                </form>
             </LoginWrapper>
         </Page>
     )
