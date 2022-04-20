@@ -17,3 +17,10 @@ h1 {
   font-size: 85px;
   margin: 0;
 }
+
+h2 {
+  font-family: Lora, serif;
+  font-weight: normal;
+  font-size: 43px;
+  margin: 0;
+}

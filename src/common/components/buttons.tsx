@@ -11,3 +11,13 @@ export const Button = styled.button`
   font-size: 17px;
   color: ${darkBlue};
 `
+
+export const DarkButton = styled.button`
+  background-color: ${darkBlue};
+  width: 194px;
+  height: 42px;
+  border-radius: 10px;
+  border-style: none;
+  font-size: 17px;
+  color: ${lime};
+`
