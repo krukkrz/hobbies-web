@@ -21,3 +21,11 @@ export const DarkButton = styled.button`
   font-size: 17px;
   color: ${lime};
 `
+
+export const ButtonWide = styled(Button)`
+  width: 470px;
+`
+
+export const DarkButtonWide = styled(DarkButton)`
+  width: 470px;
+`

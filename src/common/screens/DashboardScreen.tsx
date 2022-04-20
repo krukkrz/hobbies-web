@@ -4,6 +4,7 @@ import {lime} from "../constants/constants";
 import {useEffect, useState} from "react";
 import {fetchDashboard} from "../services/dashboardService";
 import {DashboardResponse} from "../types";
+import {useNavigate} from "react-router-dom";
 
 const Wrapper = styled.div`
   margin-top: 80px;
@@ -46,7 +47,13 @@ const DashboardScreen = () => {
 
     useEffect(() => {
         setDashboardData(fetchDashboard())
-    })
+    }, [dashboardData])
+
+    const naviagation = useNavigate()
+
+    const goToMarineLife = () => {
+            naviagation('/marine')
+    }
 
     return (
         <>
@@ -54,7 +61,7 @@ const DashboardScreen = () => {
             <Wrapper>
                 <Layout>
                     <h1>Your hobbies:</h1>
-                    <Item>
+                    <Item onClick={goToMarineLife}>
                         <Title>
                             <h2>Marine life</h2>
                         </Title>
