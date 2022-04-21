@@ -12,14 +12,6 @@ export type DiveSpotsResult = {
     maxDepth: number
 }
 
-export type SurfSpotsResult = {
-    totalNumberSpots: number
-}
-
-export type TechStackResult = {
-    totalNumberTech: number
-}
-
 export type SimpleResult = {
     total: number
 }

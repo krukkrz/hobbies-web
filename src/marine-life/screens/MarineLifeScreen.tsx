@@ -1,7 +1,11 @@
-import Header from "../components/Header";
+import Header from "../../common/components/Header";
 import styled from "styled-components";
-import { ButtonWide, DarkButtonWide} from "../components/buttons";
-import {Breadcrumbs} from "../components/Breadcrumbs";
+import { ButtonWide, DarkButtonWide} from "../../common/components/buttons";
+import {Breadcrumbs} from "../../common/components/Breadcrumbs";
+import {Species} from "../types";
+import {useEffect, useState} from "react";
+import {fetchMarineLife} from "../services/marineLifeService";
+import {useNavigate} from "react-router-dom";
 
 const Content = styled.div`
   margin-top: 50px;
@@ -32,7 +36,15 @@ const Wrapper = styled.div`
 `
 
 const MarineLifeScreen = () => {
-    const species = ['Barracuda', 'Cuttlefish', 'Seahorse']
+    const initialState: Species[] = []
+    const [species, setSpecies] = useState(initialState);
+
+    useEffect(() => {
+        setSpecies(fetchMarineLife())
+    })
+
+    const navigate = useNavigate()
+
     return (
         <>
             <Header username={'email@email.com'}/>
@@ -48,7 +60,7 @@ const MarineLifeScreen = () => {
                     <List>
                         <ButtonWide>+ add new species</ButtonWide>
                         {
-                            species.map(species => <SpeciesItem>{species}</SpeciesItem>)
+                            species.map(species => <SpeciesItem onClick={() => navigate('/marine/'+species.id)}>{species.name}</SpeciesItem>)
                         }
                     </List>
                 </Content>

@@ -11,6 +11,7 @@ const LoginWrapper = styled.div`
   width: 324px;
   height: 370px;
   justify-content: space-around;
+  align-items: center;
   margin: auto;
 `
 
@@ -27,6 +28,12 @@ const Page = styled.div`
   height: 100vh;
 `
 
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
 const LoginScreen = () => {
 
     const navigate = useNavigate()
@@ -41,12 +48,12 @@ const LoginScreen = () => {
     return (
         <Page>
             <LoginWrapper>
-                <form onSubmit={handleSubmit}>
+                <Form onSubmit={handleSubmit}>
                     <Title>Hobbies</Title>
                     <Input type='email' name='email' placeholder='Email' required/>
                     <Input type='password' name='password' placeholder='Password' required/>
                     <Button type='submit'>Login</Button>
-                </form>
+                </Form>
             </LoginWrapper>
         </Page>
     )

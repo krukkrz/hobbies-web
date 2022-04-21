@@ -1,4 +1,4 @@
-import {DashboardResponse} from "../types";
+import {DashboardResponse} from "../common/types";
 
 export const data: DashboardResponse = {
     username: 'email@email.com',

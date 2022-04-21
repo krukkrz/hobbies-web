@@ -10,6 +10,10 @@ export const Button = styled.button`
   border-width: 2px;
   font-size: 17px;
   color: ${darkBlue};
+  
+  :hover {
+    border-width: 4px;
+  }
 `
 
 export const DarkButton = styled.button`
@@ -20,6 +24,12 @@ export const DarkButton = styled.button`
   border-style: none;
   font-size: 17px;
   color: ${lime};
+  
+  :hover {
+    border-style: solid;
+    border-color: ${lime};
+    border-width: 4px;
+  }
 `
 
 export const ButtonWide = styled(Button)`
