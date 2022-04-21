@@ -7,7 +7,7 @@ import MarineLifeScreen from "./common/screens/MarineLifeScreen";
 
 export const routes = [
     { path: '/', breadcrumb: 'Dashboard' },
-    { path: '/marine', breadcrumb: ' > Marine life' },
+    { path: '/marine', breadcrumb: 'Marine life' },
 ];
 
 const App = () => {

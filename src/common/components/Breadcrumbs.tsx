@@ -11,11 +11,19 @@ const Wrapper = styled.div`
 const Breadcrumb = styled(NavLink)`
     text-decoration: none;
     color: ${darkBlue};
+  
+  :hover {
+    text-decoration: underline; 
+  }
 `
 
 export const Breadcrumbs = () => {
     const breadcrumbs = useReactRouterBreadcrumbs(routes);
     return <Wrapper>
-        {breadcrumbs.map(({ match, breadcrumb }) => <Breadcrumb to={match.pathname}>{breadcrumb}</Breadcrumb>)}
+        {breadcrumbs.map(({ match, breadcrumb }, index) => (
+            <>
+                {index === 0? '' : ' >'} <Breadcrumb to={match.pathname}>{breadcrumb}</Breadcrumb>
+            </>
+        ))}
     </Wrapper>
 }
