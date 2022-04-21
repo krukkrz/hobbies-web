@@ -4,8 +4,9 @@ import { ButtonWide, DarkButtonWide} from "../../common/components/buttons";
 import {Breadcrumbs} from "../../common/components/Breadcrumbs";
 import {Species} from "../types";
 import {useEffect, useState} from "react";
-import {fetchMarineLife} from "../services/marineLifeService";
+import {fetchAllMarineLife, fetchMarineLife} from "../services/marineLifeService";
 import {useNavigate} from "react-router-dom";
+import {useGlobalContext} from "../../common/types";
 
 const Content = styled.div`
   margin-top: 50px;
@@ -36,11 +37,10 @@ const Wrapper = styled.div`
 `
 
 const MarineLifeScreen = () => {
-    const initialState: Species[] = []
-    const [species, setSpecies] = useState(initialState);
+    const {marineLife, setMarineLife} = useGlobalContext()
 
     useEffect(() => {
-        setSpecies(fetchMarineLife())
+        setMarineLife(fetchAllMarineLife())
     })
 
     const navigate = useNavigate()
@@ -60,7 +60,7 @@ const MarineLifeScreen = () => {
                     <List>
                         <ButtonWide>+ add new species</ButtonWide>
                         {
-                            species.map(species => <SpeciesItem onClick={() => navigate('/marine/'+species.id)}>{species.name}</SpeciesItem>)
+                            marineLife.map(species => <SpeciesItem onClick={() => navigate('/marine/'+species.id)}>{species.name}</SpeciesItem>)
                         }
                     </List>
                 </Content>
