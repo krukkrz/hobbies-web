@@ -6,14 +6,8 @@ import {useEffect} from "react";
 import {fetchAllMarineLife} from "../services/marineLifeService";
 import {useNavigate} from "react-router-dom";
 import {useGlobalContext} from "../../common/types";
-
-const Content = styled.div`
-  margin-top: 50px;
-  margin-bottom: 80px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`
+import { Wrapper } from "../../common/components/Wrapper";
+import { Content } from "../../common/components/Content";
 
 const Description = styled.p`
   width: 390px;
@@ -26,13 +20,6 @@ const List = styled.div`
 
 const SpeciesItem = styled(DarkButtonWide)`
     margin-top: 20px;
-`
-
-const Wrapper = styled.div`
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-  max-width: 1100px;
 `
 
 const MarineLifeScreen = () => {
@@ -57,7 +44,7 @@ const MarineLifeScreen = () => {
                         </Description>
                     </div>
                     <List>
-                        <ButtonWide>+ add new species</ButtonWide>
+                        <ButtonWide onClick={() => navigate('/marine/new')}>+ add new species</ButtonWide>
                         {
                             marineLife.map(species => <SpeciesItem onClick={() => navigate('/marine/'+species.id)}>{species.name}</SpeciesItem>)
                         }

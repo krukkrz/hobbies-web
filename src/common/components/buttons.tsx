@@ -39,6 +39,9 @@ export const ButtonWide = styled(Button)`
 export const DarkButtonWide = styled(DarkButton)`
   width: 470px;
 `
+export const DarkButtonNarrow = styled(DarkButton)`
+  width: 150px;
+`
 
 export const PinkButton = styled(Button)`
   background-color: ${pink};

@@ -22,6 +22,7 @@ export const Breadcrumbs = () => {
         { path: '/', breadcrumb: 'Dashboard' },
         { path: '/marine', breadcrumb: 'Marine life' },
         { path: '/marine/:id', breadcrumb: 'Species' },
+        { path: '/marine/new', breadcrumb: 'Add new species' },
     ];
 
     const breadcrumbs = useReactRouterBreadcrumbs(routes);

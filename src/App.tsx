@@ -7,6 +7,7 @@ import MarineLifeScreen from "./marine-life/screens/MarineLifeScreen";
 import SpeciesScreen from "./marine-life/screens/SpeciesScreen";
 import {GlobalContext} from "./common/types";
 import {Species} from "./marine-life/types";
+import AddEditSpeciesScreen from "./marine-life/screens/AddEditSpeciesScreen";
 
 
 
@@ -20,6 +21,7 @@ const App = () => {
                 <Route path='/' element={<DashboardScreen/>}/>
                 <Route path='/marine' element={<MarineLifeScreen/>}/>
                 <Route path='/marine/:id' element={<SpeciesScreen/>}/>
+                <Route path='/marine/new' element={<AddEditSpeciesScreen/>}/>
                 <Route path='/login' element={<LoginScreen/>}/>
                 <Route path='/logout' element={<Logout/>}/>
               </Routes>

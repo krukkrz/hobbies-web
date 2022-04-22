@@ -7,20 +7,9 @@ import styled from "styled-components";
 import {Breadcrumbs} from "../../common/components/Breadcrumbs";
 import {darkBlue} from "../../common/constants/constants";
 import {NarrowButton, NarrowPinkButton} from "../../common/components/buttons";
+import { Wrapper } from "../../common/components/Wrapper";
+import { Content } from "../../common/components/Content";
 
-const Wrapper = styled.div`
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-    max-width: 1100px;
-`
-const Content = styled.div`
-  margin-top: 50px;
-  margin-bottom: 80px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`
 const Description = styled.p`
   width: 390px;
 `

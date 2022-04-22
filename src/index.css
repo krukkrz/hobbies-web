@@ -24,3 +24,26 @@ h2 {
   font-size: 43px;
   margin: 0;
 }
+
+.menuClass {
+  background-color: #F5FF33;
+  outline: 0;
+  border-width: 0 2px 2px;
+  border-style: solid;
+  border-color: #002A40;
+  padding-left: 10px;
+  padding-right: 10px;
+  z-index: 10;
+  position: absolute;
+  width: 95%;
+}
+
+.controlClass {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+::-webkit-datetime-edit { padding: 10px; }
+::-webkit-calendar-picker-indicator { padding-right: 25px }
