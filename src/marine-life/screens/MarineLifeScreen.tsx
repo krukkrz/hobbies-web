@@ -2,9 +2,8 @@ import Header from "../../common/components/Header";
 import styled from "styled-components";
 import { ButtonWide, DarkButtonWide} from "../../common/components/buttons";
 import {Breadcrumbs} from "../../common/components/Breadcrumbs";
-import {Species} from "../types";
-import {useEffect, useState} from "react";
-import {fetchAllMarineLife, fetchMarineLife} from "../services/marineLifeService";
+import {useEffect} from "react";
+import {fetchAllMarineLife} from "../services/marineLifeService";
 import {useNavigate} from "react-router-dom";
 import {useGlobalContext} from "../../common/types";
 

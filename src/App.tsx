@@ -1,4 +1,4 @@
-import React, {createContext, useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import LoginScreen from "./common/screens/LoginScreen";
 import DashboardScreen from "./common/screens/DashboardScreen";
@@ -7,11 +7,6 @@ import MarineLifeScreen from "./marine-life/screens/MarineLifeScreen";
 import SpeciesScreen from "./marine-life/screens/SpeciesScreen";
 import {GlobalContext} from "./common/types";
 import {Species} from "./marine-life/types";
-
-export const routes = [
-    { path: '/', breadcrumb: 'Dashboard' },
-    { path: '/marine', breadcrumb: 'Marine life' },
-];
 
 
 

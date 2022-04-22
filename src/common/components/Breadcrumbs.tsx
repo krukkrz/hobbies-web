@@ -1,5 +1,4 @@
 import useReactRouterBreadcrumbs from "use-react-router-breadcrumbs";
-import {routes} from "../../App";
 import styled from "styled-components";
 import {NavLink} from "react-router-dom";
 import {darkBlue} from "../constants/constants";
@@ -18,7 +17,15 @@ const Breadcrumb = styled(NavLink)`
 `
 
 export const Breadcrumbs = () => {
+    
+    const routes = [
+        { path: '/', breadcrumb: 'Dashboard' },
+        { path: '/marine', breadcrumb: 'Marine life' },
+        { path: '/marine/:id', breadcrumb: 'Species' },
+    ];
+
     const breadcrumbs = useReactRouterBreadcrumbs(routes);
+
     return <Wrapper>
         {breadcrumbs.map(({ match, breadcrumb }, index) => (
             <>

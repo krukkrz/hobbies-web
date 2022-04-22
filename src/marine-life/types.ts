@@ -4,6 +4,7 @@ export type Species = {
     where?: string
     when?: string
     howCool?: Coolness
+    photo?: string
 }
 
 export type Coolness = 'just OK.' | 'super cool!'

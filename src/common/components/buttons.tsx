@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {darkBlue, lime} from "../constants/constants";
+import {darkBlue, lime, pink} from "../constants/constants";
 
 export const Button = styled.button`
   background-color: ${lime};
@@ -38,4 +38,15 @@ export const ButtonWide = styled(Button)`
 
 export const DarkButtonWide = styled(DarkButton)`
   width: 470px;
+`
+
+export const PinkButton = styled(Button)`
+  background-color: ${pink};
+`
+
+export const NarrowButton = styled(Button)`
+  width: 150px;
+`
+export const NarrowPinkButton = styled(PinkButton)`
+  width: 150px;
 `
