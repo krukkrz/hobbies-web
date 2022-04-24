@@ -10,6 +10,7 @@ import AddEditSpeciesScreen from "./marine-life/screens/AddEditSpeciesScreen";
 import DiveSpotsScreen from "./dive-spots/screens/DiveSpotsScreen";
 import {Species} from "./marine-life/types";
 import {DiveSpot} from "./dive-spots/types";
+import DiveSpotScreen from "./dive-spots/screens/DiveSpotScreen";
 
 
 
@@ -27,6 +28,7 @@ const App = () => {
                 <Route path='/marine/:id' element={<SpeciesScreen/>}/>
                 <Route path='/marine/new' element={<AddEditSpeciesScreen/>}/>
                 <Route path='/dive' element={<DiveSpotsScreen/>}/>
+                <Route path='/dive/:id' element={<DiveSpotScreen/>}/>
                 <Route path='/login' element={<LoginScreen/>}/>
                 <Route path='/logout' element={<Logout/>}/>
               </Routes>
