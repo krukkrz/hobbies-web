@@ -53,3 +53,8 @@ export const NarrowButton = styled(Button)`
 export const NarrowPinkButton = styled(PinkButton)`
   width: 150px;
 `
+
+export const SaveButton = styled(DarkButtonNarrow)`
+    margin-top: 30px;
+    align-self: end;
+`

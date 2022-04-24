@@ -21,7 +21,10 @@ export type SimpleResult = {
 }
 
 export type Coolness = 'just OK.' | 'super cool!'
-
+export const coolnessOptions: {label: string, value: Coolness}[] = [
+    {label: "Just OK", value: "just OK."},
+    {label: "Super cool", value: "super cool!"},
+]
 export type GlobalContextType = {
     marineLife: Species[] | undefined
     setMarineLife: (species: Species[]) => void

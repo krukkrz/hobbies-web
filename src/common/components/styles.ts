@@ -53,3 +53,10 @@ export const Image = styled.img`
   height: 513px;
   object-fit: cover;
 `
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 470px;
+`

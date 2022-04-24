@@ -30,7 +30,7 @@ const DiveSpotsScreen = () => {
                         </Description>
                     </div>
                     <List>
-                        <ButtonWide onClick={() => navigate('/marine/new')}>+ add new species</ButtonWide>
+                        <ButtonWide onClick={() => navigate('/dive/new')}>+ add new spot</ButtonWide>
                         { diveSpots?.map(spot => <HobbyItem key={spot.id} onClick={() => navigate('/dive/'+spot.id)}>{spot.name}</HobbyItem>) }
                     </List>
                 </Content>

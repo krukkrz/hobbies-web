@@ -6,6 +6,18 @@ export const getName = (code: string | undefined): string => {
     return countryListAlpha2[code]
 }
 
+export const countryOptionsList = (): {label: string, value: string}[] => {
+    let list: {label: string, value: string}[] = []
+    let k: keyof typeof countryListAlpha2
+    for(k in countryListAlpha2) {
+        list = list.concat({
+            label: countryListAlpha2[k],
+            value: k
+        })
+    }
+    return list
+}
+
 // Country names object using 2-letter country codes to reference country name
 // ISO 3166 Alpha-2 Format: [2 letter Country Code]: [Country Name]
 // Sorted alphabetical by country name (special characters on bottom)

@@ -1,31 +1,18 @@
 import Header from "../../common/components/Header";
+import {Content, Form, Wrapper } from "../../common/components/styles";
 import {Breadcrumbs} from "../../common/components/Breadcrumbs";
 import {DateInput, Input, YellowDropdown} from "../../common/components/inputs";
-import {useNavigate} from "react-router-dom";
-import { coolnessOptions, useGlobalContext} from "../../common/types";
-import {Content, Form, Wrapper } from "../../common/components/styles";
-import {useEffect} from "react";
-import {fetchDiveSpots} from "../../dive-spots/services/diveSpotsService";
+import {countryOptionsList} from "../../common/services/countryService";
+import {coolnessOptions} from "../../common/types";
 import {SaveButton} from "../../common/components/buttons";
+import {useNavigate} from "react-router-dom";
 
-const AddEditSpeciesScreen = () => {
-
-    const {diveSpots, setDiveSpots} = useGlobalContext()
-
-    let locationOptions: {label: string, value: string}[] = diveSpots?.map(spot => ({label: spot.name, value: spot.id})) || []
-
-    useEffect(() => {
-        if (diveSpots === undefined) {
-            setDiveSpots(fetchDiveSpots())
-        }
-    })
-
+const AddDiveSpotScreen = () => {
     const navigate = useNavigate()
 
     const handleSubmit = (event: any) => {
-        navigate('/marine')
+        navigate('/dive')
     }
-
     return (
         <>
             <Header username={'email@email.com'}/>
@@ -33,17 +20,20 @@ const AddEditSpeciesScreen = () => {
                 <Breadcrumbs/>
                 <Content>
                     <div>
-                        <h2>Add new species</h2>
+                        <h2>Add new dive spot</h2>
                     </div>
                     <Form onSubmit={handleSubmit}>
                         <Input type='text' placeholder='Name'/>
                         <Input type='text' placeholder='Link'/>
                         <YellowDropdown
-                            options={locationOptions}
-                            onChange={()=>console.log('change')}
-                            placeholder="Where did you see it?"
+                            options={countryOptionsList()}
+                            onChange={() => {}}
+                            placeholder='Country'
                         />
-                        <DateInput type='date' placeholder='When did you see it?'/>
+                        <DateInput type='date' placeholder='When did you dive there?'/>
+                        <Input type='number' placeholder='How many dives?'/>
+                        <Input type='number' placeholder='How deep did you go?'/>
+                        <Input type='number' placeholder='How much weigh?'/>
                         <YellowDropdown
                             options={coolnessOptions}
                             onChange={()=>console.log('change')}
@@ -58,4 +48,4 @@ const AddEditSpeciesScreen = () => {
     )
 }
 
-export default AddEditSpeciesScreen
+export default AddDiveSpotScreen
