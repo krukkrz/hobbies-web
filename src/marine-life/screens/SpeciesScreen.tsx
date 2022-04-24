@@ -1,39 +1,27 @@
 
 import {useGlobalContext} from "../../common/types";
-import {useParams} from "react-router-dom";
+import { useParams} from "react-router-dom";
 import {Species} from "../types";
 import Header from "../../common/components/Header";
-import styled from "styled-components";
 import {Breadcrumbs} from "../../common/components/Breadcrumbs";
-import {darkBlue} from "../../common/constants/constants";
 import {NarrowButton, NarrowPinkButton} from "../../common/components/buttons";
-import { Wrapper } from "../../common/components/Wrapper";
-import { Content } from "../../common/components/Content";
-import { Description, Info } from "../../common/components/styles";
-
-const Link = styled.a`
-  color: ${darkBlue};
-`
-
-const ButtonsWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 100px;
-`
-
-const Image = styled.img`
-  width: 513px;
-  height: 513px;
-  object-fit: cover;
-`
+import { Image, Link, Description, Info, Wrapper, Content, ButtonsWrapper } from "../../common/components/styles";
+import {useEffect} from "react";
+import {fetchAllMarineLife} from "../services/marineLifeService";
 
 const SpeciesScreen = () => {
 
-    const {marineLife} = useGlobalContext()
+    const {marineLife, setMarineLife} = useGlobalContext()
     const {id} = useParams()
-    
-    const species: Species | undefined = marineLife.find(species => species.id === `${id}`)
+
+    useEffect(() => {
+        if (marineLife === undefined) {
+            setMarineLife(fetchAllMarineLife())
+        }
+    })
+
+    const species: Species | undefined = marineLife?.find(species => species.id === `${id}`)
+
     return (
         <>
             <Header username={'email@email.com'}/>
@@ -46,7 +34,7 @@ const SpeciesScreen = () => {
                             <Description>
                                 Here will be a response from wikipedia
                             </Description>
-                            <Link href={'.'}>Learn more about {species?.name}</Link>
+                            <Link href={species?.link}>Learn more about {species?.name}</Link>
                             <Description>
                                 For the first time you saw it <b>{species?.when}</b> <br/>
                                 while diving in <b>{species?.where}</b> <br/>

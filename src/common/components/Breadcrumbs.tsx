@@ -22,13 +22,13 @@ const Breadcrumb = styled(NavLink)`
 
 const DiveSpotBreadCrumb = ({match}: BreadcrumbComponentProps): JSX.Element => {
     const {diveSpots} = useGlobalContext()
-    let diveSpot = diveSpots.find(spot => spot.id === match.params.id);
+    let diveSpot = diveSpots?.find(spot => spot.id === match.params.id);
     return <>{diveSpot?.name}</>
 }
 
 const SpeciesBreadCrumb = ({match}: BreadcrumbComponentProps): JSX.Element => {
     const {marineLife} = useGlobalContext()
-    let species = marineLife.find(spot => spot.id === match.params.id);
+    let species = marineLife?.find(spot => spot.id === match.params.id);
     return <>{species?.name}</>
 }
 
@@ -48,7 +48,7 @@ export const Breadcrumbs = () => {
     return <Wrapper>
         {breadcrumbs.map(({ match, breadcrumb }, index) => (
             <>
-                {index === 0? '' : ' >'} <Breadcrumb to={match.pathname}>{breadcrumb}</Breadcrumb>
+                {index === 0? '' : ' >'} <Breadcrumb key={`breadcrumb_${index}`} to={match.pathname}>{breadcrumb}</Breadcrumb>
             </>
         ))}
     </Wrapper>

@@ -23,16 +23,16 @@ export type SimpleResult = {
 export type Coolness = 'just OK.' | 'super cool!'
 
 export type GlobalContextType = {
-    marineLife: Species[]
+    marineLife: Species[] | undefined
     setMarineLife: (species: Species[]) => void
-    diveSpots: DiveSpot[]
+    diveSpots: DiveSpot[] | undefined
     setDiveSpots: (spots: DiveSpot[]) => void
 }
 
 export const initialGlobalState: GlobalContextType = {
-    marineLife: [],
+    marineLife: undefined,
     setMarineLife: () => console.log('Unimplemented provider'),
-    diveSpots: [],
+    diveSpots: undefined,
     setDiveSpots: () => console.log('unimplemented provider')
 }
 

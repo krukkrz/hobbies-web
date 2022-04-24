@@ -1,11 +1,9 @@
 import Header from "../../common/components/Header";
-import { Wrapper } from "../../common/components/Wrapper";
 import {Breadcrumbs} from "../../common/components/Breadcrumbs";
-import { Content } from "../../common/components/Content";
 import {useGlobalContext} from "../../common/types";
 import {useEffect} from "react";
 import {fetchDiveSpots} from "../services/diveSpotsService";
-import { Description, HobbyItem, List } from "../../common/components/styles";
+import {Content, Description, HobbyItem, List, Wrapper } from "../../common/components/styles";
 import {useNavigate} from "react-router-dom";
 import {ButtonWide} from "../../common/components/buttons";
 
@@ -33,7 +31,7 @@ const DiveSpotsScreen = () => {
                     </div>
                     <List>
                         <ButtonWide onClick={() => navigate('/marine/new')}>+ add new species</ButtonWide>
-                        { diveSpots.map(spot => <HobbyItem onClick={() => navigate('/dive/'+spot.id)}>{spot.name}</HobbyItem>) }
+                        { diveSpots?.map(spot => <HobbyItem key={spot.id} onClick={() => navigate('/dive/'+spot.id)}>{spot.name}</HobbyItem>) }
                     </List>
                 </Content>
             </Wrapper>

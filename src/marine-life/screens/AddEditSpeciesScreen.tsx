@@ -1,12 +1,13 @@
 import Header from "../../common/components/Header";
-import { Wrapper } from "../../common/components/Wrapper";
 import {Breadcrumbs} from "../../common/components/Breadcrumbs";
-import { Content } from "../../common/components/Content";
 import {DateInput, Input, YellowDropdown} from "../../common/components/inputs";
 import styled from "styled-components";
 import { DarkButtonNarrow} from "../../common/components/buttons";
 import {useNavigate} from "react-router-dom";
-import {Coolness} from "../../common/types";
+import {Coolness, useGlobalContext} from "../../common/types";
+import {Content, Wrapper } from "../../common/components/styles";
+import {useEffect} from "react";
+import {fetchDiveSpots} from "../../dive-spots/services/diveSpotsService";
 
 const Form = styled.form`
   display: flex;
@@ -20,11 +21,17 @@ const SaveButton = styled(DarkButtonNarrow)`
 `
 
 const AddEditSpeciesScreen = () => {
-    const options = [
-        {label: "One", value: "1"},
-        {label: "Two", value: "2"},
-        {label: "Three", value: "3"},
-    ];
+
+    const {diveSpots, setDiveSpots} = useGlobalContext()
+
+    let locationOptions: {label: string, value: string}[] = diveSpots?.map(spot => ({label: spot.name, value: spot.id})) || []
+
+
+    useEffect(() => {
+        if (diveSpots === undefined) {
+            setDiveSpots(fetchDiveSpots())
+        }
+    })
 
     const coolnessOptions: {label: string, value: Coolness}[] = [
         {label: "Just OK", value: "just OK."},
@@ -50,7 +57,7 @@ const AddEditSpeciesScreen = () => {
                         <Input type='text' placeholder='Name'/>
                         <Input type='text' placeholder='Link'/>
                         <YellowDropdown
-                            options={options}
+                            options={locationOptions}
                             onChange={()=>console.log('change')}
                             placeholder="Where did you see it?"
                         />

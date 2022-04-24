@@ -7,4 +7,5 @@ export type Species = {
     when?: string
     howCool?: Coolness
     photo?: string
+    link?: string
 }

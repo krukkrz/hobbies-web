@@ -1,14 +1,11 @@
 import Header from "../../common/components/Header";
-import styled from "styled-components";
-import { ButtonWide, DarkButtonWide} from "../../common/components/buttons";
+import { ButtonWide } from "../../common/components/buttons";
 import {Breadcrumbs} from "../../common/components/Breadcrumbs";
 import {useEffect} from "react";
 import {fetchAllMarineLife} from "../services/marineLifeService";
 import {useNavigate} from "react-router-dom";
 import {useGlobalContext} from "../../common/types";
-import { Wrapper } from "../../common/components/Wrapper";
-import { Content } from "../../common/components/Content";
-import { Description, HobbyItem, List} from "../../common/components/styles";
+import {Content, Description, HobbyItem, List, Wrapper} from "../../common/components/styles";
 
 const MarineLifeScreen = () => {
     const {marineLife, setMarineLife} = useGlobalContext()
@@ -34,7 +31,7 @@ const MarineLifeScreen = () => {
                     <List>
                         <ButtonWide onClick={() => navigate('/marine/new')}>+ add new species</ButtonWide>
                         {
-                            marineLife.map(species => <HobbyItem onClick={() => navigate('/marine/'+species.id)}>{species.name}</HobbyItem>)
+                            marineLife?.map(species => <HobbyItem onClick={() => navigate('/marine/'+species.id)}>{species.name}</HobbyItem>)
                         }
                     </List>
                 </Content>
