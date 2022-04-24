@@ -4,10 +4,9 @@ import {Breadcrumbs} from "../../common/components/Breadcrumbs";
 import { Content } from "../../common/components/Content";
 import {DateInput, Input, YellowDropdown} from "../../common/components/inputs";
 import styled from "styled-components";
-import {Coolness} from "../types";
 import { DarkButtonNarrow} from "../../common/components/buttons";
-import {login} from "../../common/services/authService";
 import {useNavigate} from "react-router-dom";
+import {Coolness} from "../../common/types";
 
 const Form = styled.form`
   display: flex;

@@ -1,5 +1,6 @@
 import {Species} from "../marine-life/types";
 import {createContext, useContext} from "react";
+import {DiveSpot} from "../dive-spots/types";
 
 export type DashboardResponse = {
     username?: string;
@@ -19,16 +20,20 @@ export type SimpleResult = {
     total: number
 }
 
+export type Coolness = 'just OK.' | 'super cool!'
+
 export type GlobalContextType = {
     marineLife: Species[]
     setMarineLife: (species: Species[]) => void
+    diveSpots: DiveSpot[]
+    setDiveSpots: (spots: DiveSpot[]) => void
 }
 
 export const initialGlobalState: GlobalContextType = {
     marineLife: [],
-    setMarineLife: (value) => {
-        console.log('Unimplemented provider')
-    }
+    setMarineLife: () => console.log('Unimplemented provider'),
+    diveSpots: [],
+    setDiveSpots: () => console.log('unimplemented provider')
 }
 
 export const GlobalContext = createContext<GlobalContextType>(initialGlobalState)

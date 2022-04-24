@@ -8,19 +8,7 @@ import {useNavigate} from "react-router-dom";
 import {useGlobalContext} from "../../common/types";
 import { Wrapper } from "../../common/components/Wrapper";
 import { Content } from "../../common/components/Content";
-
-const Description = styled.p`
-  width: 390px;
-`
-
-const List = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-
-const SpeciesItem = styled(DarkButtonWide)`
-    margin-top: 20px;
-`
+import { Description, HobbyItem, List} from "../../common/components/styles";
 
 const MarineLifeScreen = () => {
     const {marineLife, setMarineLife} = useGlobalContext()
@@ -46,7 +34,7 @@ const MarineLifeScreen = () => {
                     <List>
                         <ButtonWide onClick={() => navigate('/marine/new')}>+ add new species</ButtonWide>
                         {
-                            marineLife.map(species => <SpeciesItem onClick={() => navigate('/marine/'+species.id)}>{species.name}</SpeciesItem>)
+                            marineLife.map(species => <HobbyItem onClick={() => navigate('/marine/'+species.id)}>{species.name}</HobbyItem>)
                         }
                     </List>
                 </Content>

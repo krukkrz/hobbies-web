@@ -55,6 +55,9 @@ const DashboardScreen = () => {
             naviagation('/marine')
     }
 
+    const goToDiveSpots = () => {
+        naviagation('/dive')
+    }
     return (
         <>
             <Header username={dashboardData.username}/>
@@ -67,7 +70,7 @@ const DashboardScreen = () => {
                         </Title>
                         <Info>You saw <b>{dashboardData.marineLife?.total}</b> marine species in total.</Info>
                     </Item>
-                    <Item>
+                    <Item onClick={goToDiveSpots}>
                         <Title>
                             <h2>Dive spots</h2>
                         </Title>

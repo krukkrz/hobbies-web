@@ -9,10 +9,7 @@ import {darkBlue} from "../../common/constants/constants";
 import {NarrowButton, NarrowPinkButton} from "../../common/components/buttons";
 import { Wrapper } from "../../common/components/Wrapper";
 import { Content } from "../../common/components/Content";
-
-const Description = styled.p`
-  width: 390px;
-`
+import { Description, Info } from "../../common/components/styles";
 
 const Link = styled.a`
   color: ${darkBlue};
@@ -29,12 +26,6 @@ const Image = styled.img`
   width: 513px;
   height: 513px;
   object-fit: cover;
-`
-
-const Info = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 `
 
 const SpeciesScreen = () => {

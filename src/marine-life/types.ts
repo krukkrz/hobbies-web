@@ -1,3 +1,5 @@
+import {Coolness} from "../common/types";
+
 export type Species = {
     id: string
     name: string
@@ -6,5 +8,3 @@ export type Species = {
     howCool?: Coolness
     photo?: string
 }
-
-export type Coolness = 'just OK.' | 'super cool!'
