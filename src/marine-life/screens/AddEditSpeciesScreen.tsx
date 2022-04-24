@@ -2,11 +2,12 @@ import Header from "../../common/components/Header";
 import {Breadcrumbs} from "../../common/components/Breadcrumbs";
 import {DateInput, Input, YellowDropdown} from "../../common/components/inputs";
 import {useNavigate} from "react-router-dom";
-import { coolnessOptions, useGlobalContext} from "../../common/types";
+import { coolnessOptions} from "../../common/types";
 import {Content, Form, Wrapper } from "../../common/components/styles";
 import {useEffect} from "react";
 import {fetchDiveSpots} from "../../dive-spots/services/diveSpotsService";
 import {SaveButton} from "../../common/components/buttons";
+import {useGlobalContext} from "../../common/components/GlobalContext";
 
 const AddEditSpeciesScreen = () => {
 

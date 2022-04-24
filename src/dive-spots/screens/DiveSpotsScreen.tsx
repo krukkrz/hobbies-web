@@ -1,11 +1,11 @@
 import Header from "../../common/components/Header";
 import {Breadcrumbs} from "../../common/components/Breadcrumbs";
-import {useGlobalContext} from "../../common/types";
 import {useEffect} from "react";
 import {fetchDiveSpots} from "../services/diveSpotsService";
 import {Content, Description, HobbyItem, List, Wrapper } from "../../common/components/styles";
 import {useNavigate} from "react-router-dom";
 import {ButtonWide} from "../../common/components/buttons";
+import {useGlobalContext} from "../../common/components/GlobalContext";
 
 
 const DiveSpotsScreen = () => {

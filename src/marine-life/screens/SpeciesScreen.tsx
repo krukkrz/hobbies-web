@@ -1,5 +1,3 @@
-
-import {useGlobalContext} from "../../common/types";
 import { useParams} from "react-router-dom";
 import {Species} from "../types";
 import Header from "../../common/components/Header";
@@ -8,6 +6,7 @@ import {NarrowButton, NarrowPinkButton} from "../../common/components/buttons";
 import { Image, Link, Description, Info, Wrapper, Content, ButtonsWrapper } from "../../common/components/styles";
 import {useEffect} from "react";
 import {fetchAllMarineLife} from "../services/marineLifeService";
+import {useGlobalContext} from "../../common/components/GlobalContext";
 
 const SpeciesScreen = () => {
 

@@ -5,7 +5,7 @@ import styled from "styled-components";
 import {NavLink} from "react-router-dom";
 import {darkBlue} from "../constants/constants";
 import React from "react";
-import {useGlobalContext} from "../types";
+import {useGlobalContext} from "./GlobalContext";
 
 const Wrapper = styled.div`
   margin-top: 80px;
@@ -42,6 +42,7 @@ export const Breadcrumbs = () => {
         { path: '/dive', breadcrumb: 'Dive spots' },
         { path: '/dive/:id', breadcrumb: DiveSpotBreadCrumb},
         { path: '/dive/new', breadcrumb: 'New spot'},
+        { path: '/surf', breadcrumb: 'Surf spots'},
     ];
 
     const breadcrumbs = useReactRouterBreadcrumbs(routes);

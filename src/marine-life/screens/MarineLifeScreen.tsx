@@ -4,8 +4,8 @@ import {Breadcrumbs} from "../../common/components/Breadcrumbs";
 import {useEffect} from "react";
 import {fetchAllMarineLife} from "../services/marineLifeService";
 import {useNavigate} from "react-router-dom";
-import {useGlobalContext} from "../../common/types";
 import {Content, Description, HobbyItem, List, Wrapper} from "../../common/components/styles";
+import {useGlobalContext} from "../../common/components/GlobalContext";
 
 const MarineLifeScreen = () => {
     const {marineLife, setMarineLife} = useGlobalContext()

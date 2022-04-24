@@ -5,13 +5,15 @@ import DashboardScreen from "./common/screens/DashboardScreen";
 import Logout from "./common/screens/Logout";
 import MarineLifeScreen from "./marine-life/screens/MarineLifeScreen";
 import SpeciesScreen from "./marine-life/screens/SpeciesScreen";
-import {GlobalContext} from "./common/types";
 import AddEditSpeciesScreen from "./marine-life/screens/AddEditSpeciesScreen";
 import DiveSpotsScreen from "./dive-spots/screens/DiveSpotsScreen";
 import {Species} from "./marine-life/types";
 import {DiveSpot} from "./dive-spots/types";
 import DiveSpotScreen from "./dive-spots/screens/DiveSpotScreen";
 import AddDiveSpotScreen from "./dive-spots/screens/AddDiveSpotScreen";
+import SurfSpotsScreen from "./surf-spots/screens/SurfSpotsScreen";
+import {SurfSpot} from "./surf-spots/types";
+import { GlobalContext } from './common/components/GlobalContext';
 
 
 
@@ -20,8 +22,17 @@ const App = () => {
     const [marineLife, setMarineLife] = useState(initSpecies)
     const initDiveSpots: DiveSpot[] = [];
     const [diveSpots, setDiveSpots] = useState(initDiveSpots)
+    const initSurfSpots: SurfSpot[] = [];
+    const [surfSpots, setSurfSpots] = useState(initSurfSpots)
     return (
-        <GlobalContext.Provider value={{marineLife, setMarineLife, diveSpots, setDiveSpots}}>
+        <GlobalContext.Provider value={{
+            marineLife,
+            setMarineLife,
+            diveSpots,
+            setDiveSpots,
+            surfSpots,
+            setSurfSpots
+        }}>
             <Router>
               <Routes>
                 <Route path='/' element={<DashboardScreen/>}/>
@@ -31,6 +42,7 @@ const App = () => {
                 <Route path='/dive' element={<DiveSpotsScreen/>}/>
                 <Route path='/dive/:id' element={<DiveSpotScreen/>}/>
                 <Route path='/dive/new' element={<AddDiveSpotScreen/>}/>
+                <Route path='/surf' element={<SurfSpotsScreen/>}/>
                 <Route path='/login' element={<LoginScreen/>}/>
                 <Route path='/logout' element={<Logout/>}/>
               </Routes>

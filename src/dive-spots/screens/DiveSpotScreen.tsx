@@ -1,4 +1,3 @@
-import {useGlobalContext} from "../../common/types";
 import {useParams} from "react-router-dom";
 import Header from "../../common/components/Header";
 import {Breadcrumbs} from "../../common/components/Breadcrumbs";
@@ -8,6 +7,7 @@ import {getName} from "../../common/services/countryService";
 import {NarrowButton, NarrowPinkButton} from "../../common/components/buttons";
 import {useEffect} from "react";
 import {fetchDiveSpots} from "../services/diveSpotsService";
+import {useGlobalContext} from "../../common/components/GlobalContext";
 
 const DiveSpotScreen = () => {
     const {diveSpots, setDiveSpots} = useGlobalContext()

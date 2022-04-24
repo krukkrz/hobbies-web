@@ -58,6 +58,9 @@ const DashboardScreen = () => {
     const goToDiveSpots = () => {
         naviagation('/dive')
     }
+    const goToSurfSpots = () => {
+        naviagation('/surf')
+    }
     return (
         <>
             <Header username={dashboardData.username}/>
@@ -77,7 +80,7 @@ const DashboardScreen = () => {
                         <Info>You dived <b>{dashboardData.diveSpots?.totalDives} times</b> in <b>{dashboardData.diveSpots?.totalSpots} spots</b> in total
                             and you have reached <b>{dashboardData.diveSpots?.maxDepth} m</b> deep. </Info>
                     </Item>
-                    <Item>
+                    <Item onClick={goToSurfSpots}>
                         <Title>
                             <h2>Surf spots</h2>
                         </Title>
