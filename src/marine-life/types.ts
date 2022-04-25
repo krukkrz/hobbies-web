@@ -1,8 +1,6 @@
-import {Coolness} from "../common/types";
+import {BaseHobbyType, Coolness} from "../common/types";
 
-export type Species = {
-    id: string
-    name: string
+export type Species = BaseHobbyType & {
     where?: string
     when?: string
     howCool?: Coolness

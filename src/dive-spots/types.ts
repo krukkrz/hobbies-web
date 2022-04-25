@@ -1,8 +1,6 @@
-import {Coolness} from "../common/types";
+import {BaseHobbyType, Coolness} from "../common/types";
 
-export type DiveSpot = {
-    id: string
-    name: string
+export type DiveSpot = BaseHobbyType & {
     link?: string
     country? :string
     when?: string

@@ -50,6 +50,7 @@ export const Breadcrumbs = () => {
         { path: '/dive/new', breadcrumb: 'New spot'},
         { path: '/surf', breadcrumb: 'Surf spots'},
         { path: '/surf/:id', breadcrumb: SurfSpotBreadCrumb},
+        { path: '/surf/new', breadcrumb: 'New spot'},
     ];
 
     const breadcrumbs = useReactRouterBreadcrumbs(routes);

@@ -6,6 +6,11 @@ export type DashboardResponse = {
     techStack?: SimpleResult
 }
 
+export type BaseHobbyType = {
+    id: string
+    name: string
+}
+
 export type DiveSpotsResult = {
     totalDives: number
     totalSpots: number
