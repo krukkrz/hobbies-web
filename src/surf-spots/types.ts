@@ -12,4 +12,6 @@ export type SurfSpot = {
     photo?: string
 }
 
-export type SurfingType = 'Kite surfing' | 'Surfing' | 'Wind surfing'
+export const surfingTypes = ['Kite surfing', 'Surfing', 'Wind surfing'] as const
+export type SurfingType = typeof surfingTypes[number]
+export const surfingOptions = surfingTypes.map(type => ({label: type, value: type}))

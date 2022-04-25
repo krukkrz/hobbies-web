@@ -47,3 +47,14 @@ h2 {
 
 ::-webkit-datetime-edit { padding: 10px; }
 ::-webkit-calendar-picker-indicator { padding-right: 25px }
+
+input[type=date] {
+  text-align: right;
+}
+
+input[type="date"]:before {
+  content: attr(placeholder) !important;
+  font-family: "Work Sans", sans-serif;
+  margin-right: 0.5em;
+  padding-left: 10px;
+}
