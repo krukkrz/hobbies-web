@@ -19,6 +19,7 @@ import AddSurfSpotScreen from "./surf-spots/screens/AddSurfSpotScreen";
 import TechStackScreen from "./tech-stack/screens/TechStackScreen";
 import {Tech} from "./tech-stack/types";
 import TechScreen from "./tech-stack/screens/TechScreen";
+import AddTechScreen from "./tech-stack/screens/AddTechScreen";
 
 
 
@@ -56,6 +57,7 @@ const App = () => {
                 <Route path='/surf/new' element={<AddSurfSpotScreen/>}/>
                 <Route path='/tech' element={<TechStackScreen/>}/>
                 <Route path='/tech/:id' element={<TechScreen/>}/>
+                <Route path='/tech/new' element={<AddTechScreen/>}/>
                 <Route path='/login' element={<LoginScreen/>}/>
                 <Route path='/logout' element={<Logout/>}/>
               </Routes>
