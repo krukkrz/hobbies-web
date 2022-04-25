@@ -54,12 +54,14 @@ const DashboardScreen = () => {
     const goToMarineLife = () => {
             naviagation('/marine')
     }
-
     const goToDiveSpots = () => {
         naviagation('/dive')
     }
     const goToSurfSpots = () => {
         naviagation('/surf')
+    }
+    const goToTechStack = () => {
+        naviagation('/tech')
     }
     return (
         <>
@@ -86,7 +88,7 @@ const DashboardScreen = () => {
                         </Title>
                         <Info>You visited <b>{dashboardData.surfSpots?.total}</b> surfing spots.</Info>
                     </Item>
-                    <Item>
+                    <Item onClick={goToTechStack}>
                         <Title>
                             <h2>Tech stack</h2>
                         </Title>

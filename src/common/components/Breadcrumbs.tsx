@@ -51,6 +51,9 @@ export const Breadcrumbs = () => {
         { path: '/surf', breadcrumb: 'Surf spots'},
         { path: '/surf/:id', breadcrumb: SurfSpotBreadCrumb},
         { path: '/surf/new', breadcrumb: 'New spot'},
+        { path: '/tech', breadcrumb: 'Tech stack'},
+        { path: '/tech/:id', breadcrumb: 'Change me!'},
+        { path: '/tech/new', breadcrumb: 'New tech'},
     ];
 
     const breadcrumbs = useReactRouterBreadcrumbs(routes);

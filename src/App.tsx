@@ -16,6 +16,7 @@ import {SurfSpot} from "./surf-spots/types";
 import { GlobalContext } from './common/components/GlobalContext';
 import SurfSpotScreen from "./surf-spots/screens/SurfSpotScreen";
 import AddSurfSpotScreen from "./surf-spots/screens/AddSurfSpotScreen";
+import TechStackScreen from "./tech-stack/screens/TechStackScreen";
 
 
 
@@ -47,6 +48,7 @@ const App = () => {
                 <Route path='/surf' element={<SurfSpotsScreen/>}/>
                 <Route path='/surf/:id' element={<SurfSpotScreen/>}/>
                 <Route path='/surf/new' element={<AddSurfSpotScreen/>}/>
+                <Route path='/tech' element={<TechStackScreen/>}/>
                 <Route path='/login' element={<LoginScreen/>}/>
                 <Route path='/logout' element={<Logout/>}/>
               </Routes>
