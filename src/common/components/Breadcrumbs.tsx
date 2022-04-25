@@ -38,6 +38,12 @@ const SurfSpotBreadCrumb = ({match}: BreadcrumbComponentProps): JSX.Element => {
     return <>{species?.name}</>
 }
 
+const TechStackBreadCrumb = ({match}: BreadcrumbComponentProps): JSX.Element => {
+    const {techStack} = useGlobalContext()
+    let tech = techStack?.find(tech => tech.id === match.params.id);
+    return <>{tech?.name}</>
+}
+
 export const Breadcrumbs = () => {
     
     const routes = [
@@ -52,7 +58,7 @@ export const Breadcrumbs = () => {
         { path: '/surf/:id', breadcrumb: SurfSpotBreadCrumb},
         { path: '/surf/new', breadcrumb: 'New spot'},
         { path: '/tech', breadcrumb: 'Tech stack'},
-        { path: '/tech/:id', breadcrumb: 'Change me!'},
+        { path: '/tech/:id', breadcrumb: TechStackBreadCrumb},
         { path: '/tech/new', breadcrumb: 'New tech'},
     ];
 

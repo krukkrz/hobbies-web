@@ -17,6 +17,8 @@ import { GlobalContext } from './common/components/GlobalContext';
 import SurfSpotScreen from "./surf-spots/screens/SurfSpotScreen";
 import AddSurfSpotScreen from "./surf-spots/screens/AddSurfSpotScreen";
 import TechStackScreen from "./tech-stack/screens/TechStackScreen";
+import {Tech} from "./tech-stack/types";
+import TechScreen from "./tech-stack/screens/TechScreen";
 
 
 
@@ -27,6 +29,8 @@ const App = () => {
     const [diveSpots, setDiveSpots] = useState(initDiveSpots)
     const initSurfSpots: SurfSpot[] = [];
     const [surfSpots, setSurfSpots] = useState(initSurfSpots)
+    const initTechStack: Tech[] = []
+    const [techStack, setTechStack] = useState(initTechStack)
     return (
         <GlobalContext.Provider value={{
             marineLife,
@@ -34,7 +38,9 @@ const App = () => {
             diveSpots,
             setDiveSpots,
             surfSpots,
-            setSurfSpots
+            setSurfSpots,
+            techStack,
+            setTechStack,
         }}>
             <Router>
               <Routes>
@@ -49,6 +55,7 @@ const App = () => {
                 <Route path='/surf/:id' element={<SurfSpotScreen/>}/>
                 <Route path='/surf/new' element={<AddSurfSpotScreen/>}/>
                 <Route path='/tech' element={<TechStackScreen/>}/>
+                <Route path='/tech/:id' element={<TechScreen/>}/>
                 <Route path='/login' element={<LoginScreen/>}/>
                 <Route path='/logout' element={<Logout/>}/>
               </Routes>

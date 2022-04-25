@@ -25,6 +25,13 @@ h2 {
   margin: 0;
 }
 
+h3 {
+  font-family: Lora, serif;
+  font-weight: normal;
+  font-size: 32px;
+  margin: 0;
+}
+
 .menuClass {
   background-color: #F5FF33;
   outline: 0;
