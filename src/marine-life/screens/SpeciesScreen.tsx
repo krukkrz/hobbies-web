@@ -14,7 +14,7 @@ const SpeciesScreen = () => {
     const {id} = useParams()
 
     useEffect(() => {
-        if (marineLife === undefined) {
+        if (marineLife?.length === 0) {
             setMarineLife(fetchAllMarineLife())
         }
     })

@@ -14,7 +14,7 @@ const DiveSpotScreen = () => {
     const {id} = useParams()
 
     useEffect(() => {
-        if (diveSpots === undefined) {
+        if (diveSpots?.length === 0) {
             setDiveSpots(fetchDiveSpots())
         }
     })

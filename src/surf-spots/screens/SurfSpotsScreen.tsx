@@ -28,8 +28,8 @@ const SurfSpotsScreen = () => {
                         </Description>
                     </div>
                     <List>
-                        <ButtonWide onClick={() => navigate('/surf/new')}>+ add new spot</ButtonWide>
-                        { surfSpots?.map(spot => <HobbyItem onClick={() => console.log('test')}>{spot.name}</HobbyItem>) }
+                        <ButtonWide onClick={() => navigate('/dive/new')}>+ add new spot</ButtonWide>
+                        { surfSpots?.map(spot => <HobbyItem onClick={() => navigate('/surf/'+spot.id)}>{spot.name}</HobbyItem>) }
                     </List>
                 </Content>
             </Wrapper>

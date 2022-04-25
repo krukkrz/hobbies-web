@@ -5,7 +5,8 @@ export type SurfSpot = {
     name: string
     link?: string
     country?: string
-    when?: string
+    startDate?: string
+    endDate?: string
     surfingType?: SurfingType
     coolness?: Coolness
     photo?: string

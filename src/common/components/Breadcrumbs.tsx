@@ -28,7 +28,13 @@ const DiveSpotBreadCrumb = ({match}: BreadcrumbComponentProps): JSX.Element => {
 
 const SpeciesBreadCrumb = ({match}: BreadcrumbComponentProps): JSX.Element => {
     const {marineLife} = useGlobalContext()
-    let species = marineLife?.find(spot => spot.id === match.params.id);
+    let species = marineLife?.find(species => species.id === match.params.id);
+    return <>{species?.name}</>
+}
+
+const SurfSpotBreadCrumb = ({match}: BreadcrumbComponentProps): JSX.Element => {
+    const {surfSpots} = useGlobalContext()
+    let species = surfSpots?.find(spot => spot.id === match.params.id);
     return <>{species?.name}</>
 }
 
@@ -43,6 +49,7 @@ export const Breadcrumbs = () => {
         { path: '/dive/:id', breadcrumb: DiveSpotBreadCrumb},
         { path: '/dive/new', breadcrumb: 'New spot'},
         { path: '/surf', breadcrumb: 'Surf spots'},
+        { path: '/surf/:id', breadcrumb: SurfSpotBreadCrumb},
     ];
 
     const breadcrumbs = useReactRouterBreadcrumbs(routes);
